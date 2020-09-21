@@ -7,6 +7,7 @@ class Article < ApplicationRecord
     end
 
     has_many :comments
+    has_many :taggings
     has_many :tags, through: :taggings
 end
 
