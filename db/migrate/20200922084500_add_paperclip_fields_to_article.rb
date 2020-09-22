@@ -1,5 +1,5 @@
 class AddPaperclipFieldsToArticle < ActiveRecord::Migration[6.0]
   def change
-    add_attachment :posts, :image
+    add_attachment :articles, :image
   end
 end
