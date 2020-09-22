@@ -1,5 +1,6 @@
 <h1><%= @article.title %></h1>
 <h2><%= @article.body %></h2>
+<p><%= @article.tag_list%></p>
 <%= link_to "edit", edit_article_path(@article) %>
 <%= link_to "delete", article_path(@article), method: :delete, data: {confirm: "Really delete the article?"} %>
 <h5>Comments (<%= @article.comments.size %>)</h5>
