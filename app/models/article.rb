@@ -1,5 +1,5 @@
 class Article < ApplicationRecord
-
+  attr_accessor :image_file_name
     def tag_list
       self.tags.collect do |tag|
         tag.name
@@ -14,6 +14,9 @@ class Article < ApplicationRecord
     has_many :comments, :dependent => :destroy
     has_many :taggings, :dependent => :destroy
     has_many :tags, through: :taggings, :dependent => :destroy
+    has_attached_file :image
+    validates_attachment :image, content_type: { content_type: [ "image/jpg", "image/jpeg", "image/png" ] }
+
 end
 
 
